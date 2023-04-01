@@ -84,8 +84,8 @@ exports.getArticleById = (req, res)=>{
 // 更新文章分类的路由
 exports.updateCateById = (req, res)=>{
     // 定义查重sql
-    const sql = `select * from ev_article_cate where name = ? or alias = ?`
-    db.query(sql, [req.body.name ,req.body.alias], (err, results)=>{
+    const sql = `select * from ev_article_cate where Id<>? and (name=? or alias=?)`
+    db.query(sql, [req.body.id, req.body.name ,req.body.alias], (err, results)=>{
         if(err) return res.cc(err)
 
        // 判断 分类名称 和 分类别名 是否被占用
