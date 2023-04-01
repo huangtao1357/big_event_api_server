@@ -39,7 +39,7 @@ app.use('/my', userinfoRouter)
 // 导入并使用文章分类路由模块
 const artcateRouter = require('./router/artcate')
 // 为文章分类的路由挂载统一的访问前缀 /my/article
-app.use('/my/artcate', artcateRouter)
+app.use('/my/article', artcateRouter)
 // 导入并使用文章路由模块
 const articleRouter  = require('./router/article')
 app.use('/my/article', articleRouter)
